@@ -1,0 +1,5 @@
+.env
+logs/
+storage/
+*.session
+__pycache__/
