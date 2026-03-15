@@ -1,7 +1,23 @@
-Deal Sniper
+# Deal Sniper
 
-This project will be implemented by an autonomous coding agent.
+Deal Sniper is a Python system that detects high value ecommerce deals from Telegram channels and sends alerts.
 
-The system architecture and build instructions are defined in BUILD_PLAN.md.
+## Architecture
 
-The agent should follow BUILD_PLAN.md and implement the full application.
+See BUILD_PLAN.md for the full system architecture and implementation specification.
+
+## Agent Instructions
+
+If you are an AI coding agent, follow the instructions in AGENT_TASK.md to generate the full project.
+
+## Setup
+
+Create a `.env` file using `.env.example`.
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run:
+
+python main.py
