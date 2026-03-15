@@ -3,7 +3,9 @@ import os
 
 load_dotenv()
 
-API_ID = int(os.getenv("API_ID"))
+API_ID = os.getenv("API_ID")
+if API_ID is not None:
+    API_ID = int(API_ID)
 API_HASH = os.getenv("API_HASH")
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
