@@ -43,10 +43,18 @@ async def start_listener(callback_function):
     @client.on(events.NewMessage(chats=resolved_channels))
     async def handler(event):
         try:
-            # We don't await the callback here directly unless we want to block the listener
-            # Since pipeline is callback_function(message) which we pass to our asyncio queue:
-            # According to spec: listener must remain non-blocking. The callback will enqueue.
-            callback_function(event.message.message)
+            text = event.raw_text or ""
+            
+            # ignore empty messages
+            if not text:
+                return
+
+            # keep listener non-blocking
+            result = callback_function(text)
+
+            if asyncio.iscoroutine(result):
+                asyncio.create_task(result)
+
         except Exception as e:
             logger.error(f"Error handling message: {e}")
 

@@ -12,10 +12,11 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 ALERT_CHAT_ID = os.getenv("ALERT_CHAT_ID")
 
 CHANNELS = [
-    -1001412868909,  
-    -1001596448068,
-    -1001493857075,
-    -1001346861267
+    -1001412868909,  # DealBee Deals
+    -1001346861267,  # DealzTrendz
+    -1001493857075,  # Best Deals in India
+    -1001596448068,  # DealBee Tips, Tricks & Loots
+    -5013256582      # your test channel
 ]
 
 DEAL_SCORE_THRESHOLD = 60
