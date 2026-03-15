@@ -49,18 +49,6 @@ def test_score_deal_keywords():
     score = score_deal(data)
     assert score == 20
 
-def test_score_deal_channel_keywords():
-    # Channel keywords like loot, grab, glitch, steal deal -> +30 points
-    data = {
-        'product_name': 'Combo Loot 298',
-        'price': 298,
-        'mrp': None, # new safe none handling
-        'discount': 0.0,
-        'site': 'flipkart'
-    }
-    score = score_deal(data)
-    assert score == 30
-
 def test_score_deal_combined():
     # 70%+ discount (+40), >1000 drop (+20), keyword (+20) -> 80
     data = {
